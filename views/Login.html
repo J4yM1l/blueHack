@@ -21,7 +21,9 @@
 				left: 33%;
 				opacity: 0;
 				padding-left: 15px;
-				background-color: rgba(0,0,0,0.33);
+				background-color: rgba(255,255,255,1);
+				box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    			transition: 0.3s;
 			}
 			.center {
 				position: relative;
@@ -51,27 +53,26 @@
 		<div class="content" id="content">
 		<header id="header">
 				<h1>Assist</h1>
-				<p>A simple template for telling the world when you'll launch<br />
-				your next big thing. Brought to you by <a href="http://html5up.net">HTML5 UP</a>.</p>
+				
 			</header>
-		
+			<button class="button" id="test">Sign In</button>
 		</div>
-		<button class="button" id="test">Begin</button>
+		
 
 		<!-- Signup Form -->
 		<div class="popup" id="popup">
 				<header id="header">
-						<h1>Sign In</h1>
-						<p>A simple template for telling the world when you'll launch<br />
-						your next big thing. Brought to you by <a href="http://html5up.net">HTML5 UP</a>.</p>
+						<h1 style="color: black;">Sign In</h1>
+						
 					</header>
 			<div class="center">
             <form id="signin-form" method="get" action="/api/visitors">
-				<input type="email" name="email" id="email" placeholder="Email Address" /><br><br>
-                <input type="password" name="password" id="password" placeholder="password" /><br>
-				<input type="submit" value="Sign In" />
-                <input type="submit" value="Sign Up" />
+				<input style="background-color: rgba(0,0,0,0.75);" type="email" name="email" id="email" placeholder="Email Address" /><br><br>
+                <input style="background-color: rgba(0,0,0,0.75);" type="password" name="password" id="password" placeholder="password" /><br>
+				<a href="/Rescuer.html"><input type="button" value="Sign In" /></a>
+                <a href="/index.html"><input type="button" value="Sign Up"/></a>
 			</form>
+			<button class="button" id="exit">Close</button>
 		</div>
 		</div>
 
@@ -94,6 +95,12 @@
 			<script>
 				var toggle = false;
 				document.getElementById("test").addEventListener("click", function() {
+				
+					document.getElementById("content").classList.toggle("m-fadeOut");
+					document.getElementById("popup").classList.toggle("m-fadeIn");
+				
+				});
+				document.getElementById("exit").addEventListener("click", function() {
 				
 					document.getElementById("content").classList.toggle("m-fadeOut");
 					document.getElementById("popup").classList.toggle("m-fadeIn");

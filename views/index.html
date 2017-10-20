@@ -49,7 +49,7 @@
 </style>
 	</head>
 	<body>
-
+		<div class="container">
 		<!-- Header -->
 			<header id="header">
 				<h1>Sign-Up</h1>
@@ -136,7 +136,7 @@
 	<option value="QN">QS</option>
 	<option value="AR">AR</option>	
 	<option value="AZ">AZ</option>
-	<option value="CA">CA</option>
+	<option value="Raleigh">Raleigh</option>
 	<option value="CO">CO</option>
 	<option value="CT">CT</option>
 	<option value="DC">DC</option>
@@ -155,14 +155,14 @@
     Zip Code: <input type="text" name="zip" maxlength="5"><br>
     
 </form>
-    <h3>Certification</h3>
-    <form action="/action_page.php">
-  <input type="checkbox" name="nurse" value="CNA"> Certified Nurse Assistant<br>
-  <input type="checkbox" name="paraprof" value="PP" checked> Para-Proffessional<br>
-        <input type="checkbox" name="cpr" value="CPR" checked> CPR<br>
-    <input type="checkbox" name="md" value="MedicalDoctor" checked> Medical Doctor<br>
-  <input type="submit" value="Submit">
-</form>
+	<h3>Certification</h3>
+	<select name="cert">
+			<option value="None">None</option>
+  <option value="CNA"> Certified Nurse Assistant</option>
+  <option value="PP" > Para-Proffessional</option>
+        <option value="CPR" > CPR</option>
+    <option  value="MedicalDoctor" checked> Medical Doctor</option>
+  </select>
 				</div>
 				</div>
 				<br />
@@ -178,7 +178,7 @@
 				<input type="email" name="email" id="email" placeholder="Email Address" />
 				<input type="submit" value="Sign Up" />
 			</form-->
-
+		</div>
 		<!-- Footer -->
 			<footer id="footer">
 				<ul class="icons">

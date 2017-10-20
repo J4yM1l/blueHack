@@ -20,10 +20,10 @@
         width: 100%;
       }
       .marker {
-        background-image: url('http://www.robotwoods.com/dev/misc/bluecircle.png');
+        background-color: blue;
         background-size: cover;
-        width: 50px;
-        height: 50px;
+        width: 10px;
+        height: 10px;
         border-radius: 50%;
         cursor: pointer;
     }
@@ -281,12 +281,33 @@ var geojson = {
   {
     type: 'Rescuer',
     geometry: {
-      type: 'Point',
+      type: 'Point', 
       coordinates: [-84.42764409129978,33.66228485787951]
     },
     properties: {
       title: 'Mapbox',
       description: 'San Francisco, California'
+    }
+  },
+  {
+    type: 'Rescuee',
+    geometry: {
+      type: 'Point',
+      coordinates: [-84.42231123094456,33.660676535404946]
+    },
+    properties: {
+      title: 'Atlanta',
+      description: 'Hack'
+    }
+  },{
+    type: 'Rescuee',
+    geometry: {
+      type: 'Point', 
+      coordinates: [ -84.42411367539154,33.65381803523428]
+    },
+    properties: {
+      title: 'Mary P.',
+      description: ':D'
     }
   }]
 };
@@ -303,13 +324,12 @@ else
   // make a marker for each feature and add to the map
   new mapboxgl.Marker(el)
   .setLngLat(marker.geometry.coordinates)
+  .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+  .setHTML('<h3>' + marker.properties.title + '</h3><img src="/avatar.png" alt="32195" height="42" width="42"><p>' + marker.properties.description + '</p>'))
   .addTo(map);
 });
-function getNearestPerson(){
-    getLocation();
-    directions.setOrigin([lng, lat]);
-}
-getNearestPerson();
+
+
 function getNames() {
             $.get("./api/visitors")
                 .done(function(data) {
@@ -320,7 +340,7 @@ function getNames() {
                     console.log("Recieved");
                 });
         }
-        getNames();
+       // getNames();
 </script>
 
 </body>

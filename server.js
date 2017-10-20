@@ -23,12 +23,20 @@ app.get("/api/visitors", function (request, response) {
     return;
   }
   console.log("Sending data from database...");
-  var query = connection.query('SELECT * FROM ', function(err, result, fields) {
+    
+    connection.changeUser({
+      database : 'ibmx_2ad1bdc751c11d5'
+    }, function(err) {
+      if (err) {
+        console.log('error in changing database', err);
+        return;
+      }
+    var query = connection.query('SELECT * FROM rescuers', function(err, result, fields) {
     // Neat!
     if(err) throw err;
     console.log(result);
-    response.end();
-  });
+      });
+});
 });
 app.use(express.static(__dirname + '/views'));
 app.listen(3000, function () {
