@@ -1,5 +1,11 @@
 ---
 applications:
  - name: HelpApp101917
-   random-route: true
+   host: HelpApp101917
+   domain: mybluemix.net
    memory: 256M
+   instances: 1
+   disk_quota: 1024M
+   env:
+      NODE_ENV: 'production'
+
