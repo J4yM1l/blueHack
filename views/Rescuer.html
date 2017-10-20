@@ -257,6 +257,7 @@ var map = new mapboxgl.Map({
   center: [-84.3879824, 33.7489954],
   zoom: 15
 });
+map.showsUserLocation = true;
 map.addControl(new mapboxgl.GeolocateControl({
     positionOptions: {
         enableHighAccuracy: true
@@ -281,7 +282,7 @@ var geojson = {
     type: 'Rescuer',
     geometry: {
       type: 'Point',
-      coordinates: [-122.414, 37.776]
+      coordinates: [-84.42764409129978,33.66228485787951]
     },
     properties: {
       title: 'Mapbox',

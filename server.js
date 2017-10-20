@@ -26,6 +26,8 @@ app.get("/api/visitors", function (request, response) {
   var query = connection.query('SELECT * FROM ', function(err, result, fields) {
     // Neat!
     if(err) throw err;
+    console.log(result);
+    response.end();
   });
 });
 app.use(express.static(__dirname + '/views'));
