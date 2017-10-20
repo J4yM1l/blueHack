@@ -13,30 +13,87 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<style>
+			::-webkit-datetime-edit-text { color:black; padding: 0 0.3em; }
+::-webkit-datetime-edit-month-field { color: black; }
+::-webkit-datetime-edit-day-field { color: black; }
+::-webkit-datetime-edit-year-field { color: black; }
+::-webkit-calendar-picker-indicator { background: black; }
+.box {
+	width:100%;
+	display:box;
+	/* Firefox */
+	display:-moz-box;
+	-moz-box-orient:horizontal;
+	/* Safari, Opera, and Chrome */
+	display:-webkit-box;
+	-webkit-box-orient:horizontal;
+	/* W3C */
+	display:box;
+	box-orient:horizontal;
+	}
+	
+	.box .column1 {
+	-moz-box-flex:1.0; /* Firefox */
+	-webkit-box-flex:1.0; /* Safari and Chrome */
+	-ms-flex:1.0; /* Internet Explorer 10 */
+	box-flex:1.0;
+	}
+	
+	.box .column2 {
+	-moz-box-flex:1.0; /* Firefox */
+	-webkit-box-flex:1.0; /* Safari and Chrome */
+	-ms-flex:1.0; /* Internet Explorer 10 */
+	box-flex:1.0;
+	}
+</style>
 	</head>
 	<body>
 
 		<!-- Header -->
 			<header id="header">
-				<h1>Rescuer Sign-Up</h1>
-				<p>A simple template for telling the world when you'll launch<br />
-				your next big thing. Brought to you by <a href="http://html5up.net">HTML5 UP</a>.</p>
+				<h1>Sign-Up</h1>
+				
 			</header>
 
 		<!-- Signup Form -->
-            <form action="/action_page.php">
-                First name: <input type="text" name="fname"><br>
-                Last name: <input type="text" name="lname"><br>
-                D.O.B: <input type="text" name="dob"><br>
-                Phone Number: <input type="text" name="phone"><br>
-                 Username: <input type="text" name="user"><br>
-                 Password: <input type="password" name="password"><br>
-            <form action="/action_page.php">
-            Photo: <input type="file" name="pic" accept="image/*">
-            <input type="submit">
-            </form><br><br>
-            <input type="submit" value="Sign Up"/>
-            </form>
+		<div class="box">
+				<div class="column1">
+						<form action="/action_page.php">
+							First name: <input type="text" name="fname"><br>
+							Last name: <input type="text" name="lname"><br>
+							D.O.B: <input type="date" name="dob"><br>
+							Phone Number: <input type="text" name="phone"><br>
+							 Username: <input type="text" name="user"><br>
+							 Password: <input type="password" name="password"><br>
+						<form action="/action_page.php">
+						Photo: <input type="file" name="pic" accept="image/*">
+						<input type="submit" value="Upload">
+						</form><br>
+						<input type="submit" value="Sign Up"/>
+					</form>
+				</div>
+				<div class="column2">
+						<form action="/action_page.php">
+							First name: <input type="text" name="fname"><br>
+							Last name: <input type="text" name="lname"><br>
+							D.O.B: <input type="date" name="dob"><br>
+							Phone Number: <input type="text" name="phone"><br>
+							 Username: <input type="text" name="user"><br>
+							 Password: <input type="password" name="password"><br>
+					
+					</form>
+				</div>
+				</div>
+				<br />
+				<br />
+				<br />
+				<br /><br />
+				<br /><br />
+				<br /><br />
+				<br />
+            
+		
 			<!--form id="signup-form" method="post" action="#">
 				<input type="email" name="email" id="email" placeholder="Email Address" />
 				<input type="submit" value="Sign Up" />
