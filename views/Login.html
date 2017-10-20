@@ -13,23 +13,67 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<style>
+			.popup {
+				position: absolute;
+				width: 50%;
+				height: 50%;
+				left: 33%;
+				opacity: 0;
+				padding-left: 15px;
+				background-color: rgba(0,0,0,0.33);
+			}
+			.center {
+				position: relative;
+				left:15%;
+			}
+			.button {
+				width: 10%;
+			}
+			.m-fadeOut {
+				visibility: hidden;
+				opacity: 0;
+				transition: visibility 0s linear 300ms, opacity 300ms;
+				transform: translate(0,-1000px);
+			}
+			.m-fadeIn {
+				visibility: visible;
+				opacity: 1;
+				top: 10%;
+				transition: visibility 0s linear 0s, opacity 300ms;
+				transform: translate(0,5px);
+			}
+		</style>
 	</head>
 	<body>
 
 		<!-- Header -->
-			<header id="header">
-				<h1>Rescuer Sign-In</h1>
+		<div class="content" id="content">
+		<header id="header">
+				<h1>Assist</h1>
 				<p>A simple template for telling the world when you'll launch<br />
 				your next big thing. Brought to you by <a href="http://html5up.net">HTML5 UP</a>.</p>
 			</header>
+		
+		</div>
+		<button class="button" id="test">Begin</button>
 
 		<!-- Signup Form -->
-            <form id="signin-form" method="post" action="#">
+		<div class="popup" id="popup">
+				<header id="header">
+						<h1>Sign In</h1>
+						<p>A simple template for telling the world when you'll launch<br />
+						your next big thing. Brought to you by <a href="http://html5up.net">HTML5 UP</a>.</p>
+					</header>
+			<div class="center">
+            <form id="signin-form" method="get" action="/api/visitors">
 				<input type="email" name="email" id="email" placeholder="Email Address" /><br><br>
                 <input type="password" name="password" id="password" placeholder="password" /><br>
 				<input type="submit" value="Sign In" />
                 <input type="submit" value="Sign Up" />
 			</form>
+		</div>
+		</div>
 
 		<!-- Footer -->
 			<footer id="footer">
@@ -47,6 +91,15 @@
 		<!-- Scripts -->
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
-
+			<script>
+				var toggle = false;
+				document.getElementById("test").addEventListener("click", function() {
+				
+					document.getElementById("content").classList.toggle("m-fadeOut");
+					document.getElementById("popup").classList.toggle("m-fadeIn");
+				
+				});
+				
+			</script>
 	</body>
 </html>

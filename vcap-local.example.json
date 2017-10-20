@@ -3,7 +3,7 @@
     "cloudantNoSQLDB": [
       {
         "credentials": {
-          "url":"CLOUDANT_DATABASE_URL"
+          "url":"mysql://bcc2107420a577:ef936b7a@us-cdbr-sl-dfw-01.cleardb.net:3306/ibmx_2ad1bdc751c11d5?reconnect=true"
         },
         "label": "cloudantNoSQLDB"
       }
