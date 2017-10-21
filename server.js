@@ -7,6 +7,7 @@ var connection = mysql.createConnection({
     user: 'bcc2107420a577',
     password: 'ef936b7a',
 });
+
 connection.connect(function(err) {
     // connected! (unless `err` is set)
     if (!err)
@@ -15,6 +16,14 @@ connection.connect(function(err) {
         console.log("Cannot connect to Database!");
 
 });
+
+app.post("/saveuser", function(request, response) {
+
+    response.status(400).send("Sorry, I can`t do this!");
+
+    response.send("Success!");
+});
+
 app.get("/api/visitors", function(request, response) {
     var names = [];
     if (!connection) {
